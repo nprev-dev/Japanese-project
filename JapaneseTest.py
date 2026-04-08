@@ -12,9 +12,14 @@ hira_main = {
     "や": "ya", "ゆ": "yu", "よ": "yo",                           # Y row
     "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",   # R row
     "わ": "wa", "を": "wo", "ん": "n"                             # W row + N
-
-   }
-hira_dakuten = {}
+}
+hira_dakuten = {
+    "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go", # G row (K -> G)
+    "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo", # Z row (S -> Z)
+    "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do", # D row (T -> D)
+    "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo", # B row (H -> B)
+    "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po" # P row (H -> P) Handakuten
+}
 hira_combi = {}
 kana_main = {}
 kana_dakuten = {}
