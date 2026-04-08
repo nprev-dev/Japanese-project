@@ -1,7 +1,19 @@
 import random
 
 # ---------- Workers ---------- #
-hira_main = {"あ": "a", }
+hira_main = {
+    "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",        # Vowels
+    "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",   # K row
+    "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",  # S row
+    "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to", # T row
+    "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no",   # N row
+    "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho",   # H row
+    "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo",   # M row
+    "や": "ya", "ゆ": "yu", "よ": "yo",                           # Y row
+    "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",   # R row
+    "わ": "wa", "を": "wo", "ん": "n"                             # W row + N
+
+   }
 hira_dakuten = {}
 hira_combi = {}
 kana_main = {}
