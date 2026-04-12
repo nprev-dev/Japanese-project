@@ -23,10 +23,10 @@ hira_dakuten = {
 hira_combi = {
     "きゃ": "kya", "きゅ": "kyu", "きょ": "kyo", # K row
     "ぎゃ": "gya", "ぎゅ": "gyu", "ぎょ": "gyo", # G row
-    "しゃ": "sha", "しゅ": "shu", "しょ": "sho", # S row
-    "じゃ": "ja", "じゅ": "ju", "じょ": "jo",    # Z row
-    "ちゃ": "cha", "ちゅ": "chu", "ちょ": "cho", # T row
-    "ぢゃ": "ja", "ぢゅ": "ju", "ぢょ": "jo",    # D row
+    "しゃ": "sha", "しゅ": "shu", "しょ": "sho", # S row *SPECIAL
+    "じゃ": "ja", "じゅ": "ju", "じょ": "jo",    # Z row *SPECIAL
+    "ちゃ": "cha", "ちゅ": "chu", "ちょ": "cho", # T row *SPECIAL
+    "ぢゃ": "ja", "ぢゅ": "ju", "ぢょ": "jo",    # D row *SPECIAL
     "にゃ": "nya", "にゅ": "nyu", "にょ": "nyo", # N row
     "ひゃ": "hya", "ひゅ": "hyu", "ひょ": "hyo", # H row
     "びゃ": "bya", "びゅ": "byu", "びょ": "byo", # B row
@@ -34,7 +34,18 @@ hira_combi = {
     "みゃ": "mya", "みゅ": "myu", "みょ": "myo", # M row
     "りゃ": "rya", "りゅ": "ryu", "りょ": "ryo"  # R row
 }
-kana_main = {}
+kana_main = {
+    "ア": "a", "エ": "e", "イ": "i", "オ": "o", "ウ": "u",        # Vowels
+    "カ": "ka", "ケ": "ke", "キ": "ki", "コ": "ko", "ク": "ku",   # K row
+    "サ": "sa", "セ": "se", "シ": "shi", "ソ": "so", "ス": "su",  # S row
+    "タ": "ta", "テ": "te", "チ": "chi", "ト": "to", "ツ": "tsu", # T row
+    "ナ": "na", "ネ": "ne", "ニ": "ni", "ノ": "no", "ヌ": "nu",   # N row
+    "ハ": "ha", "ヘ": "he", "ヒ": "hi", "ホ": "ho", "フ": "fu",   # H row
+    "マ": "ma", "メ": "me", "ミ": "mi", "モ": "mo", "ム": "mu",   # M row
+    "ヤ": "ya", "ヨ": "yo", "ユ": "yu",                           # Y row
+    "ラ": "ra", "レ": "re", "リ": "ri", "ロ": "ro", "ル": "ru",   # R row
+    "ワ": "wa", "ヲ": "wo", "ン": "n"                             # W row + N
+}
 kana_dakuten = {}
 kana_combi = {}
 
