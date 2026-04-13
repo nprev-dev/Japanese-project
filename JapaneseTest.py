@@ -86,7 +86,7 @@ def hiragana_combi():
 def hiragana_both():
     hira_both = hira_main | hira_dakuten
 def hiragana_kana():
-    pass
+    hira_kana = hira_main | hira_dakuten | hira_combi
 def katakana_gojūon():
     pass
 def katakana_dakuten():
@@ -96,9 +96,9 @@ def katakana_combi():
 def katakana_both():
     kata_both = kata_main | kata_dakuten
 def katakana_kana():
-    pass
+    kata_kana = kata_main | kata_dakuten | kata_combi
 def hira_and_kata():
-    pass
+    hira_nd_kata = hira_main | hira_dakuten | hira_combi | kata_main | kata_dakuten | kata_combi
 def stop_prog():
     print("Stopping program!")
     exit()
