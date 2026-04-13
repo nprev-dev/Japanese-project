@@ -78,7 +78,29 @@ kata_combi = {
 # ---------- Workers ---------- #
 
 def hiragana_gojūon():
-    pass
+    num_question = 5 # later add function that ask user for this
+    wrong = 0 # nb wrong answer
+    right = 0 # nb right answer
+    count = 0 # current amount of questions asked 
+    selected = random.sample(list(hira_main.items()), num_question)
+    for index, (jp, en) in enumerate(selected, start=1):
+        #if count >= limit:                                #to later implemement question limit
+        #  break
+        while True:                                            # loop till right answer
+            answer = input(f"{index}. {jp}: ").strip().lower() #removes whitespaces and puts in lowercase
+            if answer == en:
+                print("Correct")
+                # right += 1             # to later implement rating 
+                break
+            elif answer == "skip":
+                print("Skipping")        # later add score penalty will be applied to message
+                # wrong += 1
+                break
+            elif answer == "quit":
+                exit()
+            else:
+                print("Try again")
+                # wrong += 1
 def hiragana_dakuten():
     pass
 def hiragana_combi():
@@ -181,9 +203,11 @@ def ask_menu(question_choice):
             continue
 
         if "options" in selected:
-            return ask_menu(selected["options"])
+            ask_menu(selected["options"])
+            continue
 
         worker = selected.get("worker")
-        if worker is not None:
-            return worker()
+        if callable(worker):
+            worker()
+            continue
 ask_menu(question_choice)  
