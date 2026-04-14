@@ -132,23 +132,28 @@ question_choice = {
         "options": {
             "1": {
                 "name": "All Hiragana Gojūon",
-                "worker": hiragana_gojūon
+                "worker": hiragana_gojūon,
+                "log": True
             },
             "2": {
                 "name": "All Hiragana Dakuten",
-                "worker": hiragana_dakuten
+                "worker": hiragana_dakuten,
+                "log": True
             },
             "3": {
                 "name": "All Hiragana Combinations",
-                "worker": hiragana_combi
+                "worker": hiragana_combi,
+                "log": True
             },
             "4": {
                 "name": "All Hiragana Gojūon + Dakuten",
-                "worker": hiragana_both
+                "worker": hiragana_both,
+                "log": True
             },
             "5": {
                 "name": "Everything",
-                "worker": hiragana_kana
+                "worker": hiragana_kana,
+                "log": True
             }
         }
     },
@@ -157,35 +162,43 @@ question_choice = {
         "options": {
             "1": {
                 "name": "All Katakana Gojūon",
-                "worker": katakana_gojūon
+                "worker": katakana_gojūon,
+                "log": True
             },
             "2": {
                 "name": "All Katakana Dakuten",
-                "worker": katakana_dakuten
+                "worker": katakana_dakuten,
+                "log": True
             },
             "3": {
                 "name": "All Katakana Combinations",
-                "worker": katakana_combi
+                "worker": katakana_combi,
+                "log": True
             },
             "4": {
                 "name": "All Katakana Gojūon + Dakuten",
-                "worker": katakana_both
+                "worker": katakana_both,
+                "log": True
             },
             "5": {
                 "name": "Everything",
-                "worker": katakana_kana
+                "worker": katakana_kana,
+                "log": True
             }
         }
     },
     "3": {
         "name": "Hiragana & Katakana",
-        "worker": hira_and_kata
+        "worker": hira_and_kata,
+        "log": True
     },
     "4": {
         "name": "Quit",
         "worker": stop_prog
     }
 }  
+
+# ---------- Check History ---------- #
 
 
 # ---------- Menu loop ---------- #  
