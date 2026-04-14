@@ -78,11 +78,11 @@ kata_combi = {
 # ---------- Workers ---------- #
 
 def hiragana_gojūon():
-    num_question = 5 # later add function that ask user for this
+    num_ques = int(num_questions()) 
     wrong = 0 # nb wrong answer
     right = 0 # nb right answer
     count = 0 # current amount of questions asked 
-    selected = random.sample(list(hira_main.items()), num_question)
+    selected = random.sample(list(hira_main.items()), num_ques)
     for index, (jp, en) in enumerate(selected, start=1):
         #if count >= limit:                                #to later implemement question limit
         #  break
@@ -196,7 +196,18 @@ question_choice = {
         "name": "Quit",
         "worker": stop_prog
     }
-}  
+} 
+
+# ---------- Amount Question ---------- #
+#implement limit & all system
+def num_questions():
+    while True:
+        num_question = input("Enter amount of questions u want to be asked: ")
+        if not num_question.strip().isdigit():
+            print("Value needs to be a number.")
+        # if num_question > len(dict)
+        else:
+            return num_question
 
 # ---------- Check History ---------- #
 
