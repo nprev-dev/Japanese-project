@@ -78,29 +78,36 @@ kata_combi = {
 # ---------- Workers ---------- #
 
 def hiragana_gojūon():
-    num_ques = int(num_questions()) 
+    while True:
+        num_ques = num_questions()
+        if num_ques > len(hira_main):
+            print(f"Number is bigger than question pool, enter a number between 1 and {len(hira_main)}.")
+            continue
+        elif num_ques <= len(hira_main):
+            break
+     
     wrong = 0 # nb wrong answer
     right = 0 # nb right answer
     count = 0 # current amount of questions asked 
     selected = random.sample(list(hira_main.items()), num_ques)
     for index, (jp, en) in enumerate(selected, start=1):
-        #if count >= limit:                                #to later implemement question limit
-        #  break
+        if count >= num_ques:                                #question limit
+            break
         while True:                                            # loop till right answer
             answer = input(f"{index}. {jp}: ").strip().lower() #removes whitespaces and puts in lowercase
             if answer == en:
                 print("Correct")
-                # right += 1             # to later implement rating 
+                right += 1             # to later implement rating 
                 break
             elif answer == "skip":
                 print("Skipping")        # later add score penalty will be applied to message
-                # wrong += 1
+                wrong += 1
                 break
             elif answer == "quit":
                 exit()
             else:
                 print("Try again")
-                # wrong += 1
+                wrong += 1
 def hiragana_dakuten():
     pass
 def hiragana_combi():
@@ -205,9 +212,15 @@ def num_questions():
         num_question = input("Enter amount of questions u want to be asked: ")
         if not num_question.strip().isdigit():
             print("Value needs to be a number.")
-        # if num_question > len(dict)
-        else:
-            return num_question
+            continue
+
+        num_question = int(num_question)
+
+        if num_question < 1:
+            print("Value needs to be bigger than 1.")
+            continue
+        
+        return num_question
 
 # ---------- Check History ---------- #
 
