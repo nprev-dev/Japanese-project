@@ -5,7 +5,7 @@ import random
 # - Grade system (in %) and maybe show mistakes
 # - chose how many questions u want (with an all option)
 # - Add grammar rules (small tsu, long vowels, combination explication etc, maybe later add tips on how to learn)
-
+# - Grammar to add: small tsu, long vowels, combi rules, particles
 
 # ---------- Dicts ---------- #
 hira_main = {
@@ -220,7 +220,33 @@ def hiragana_kana():
                 print("Try again")
                 wrong += 1
 def katakana_gojūon():
-    pass
+    while True:
+        num_ques = num_questions()
+        if num_ques > len(kata_main):
+            print(f"Number is bigger than question pool, enter a number between 1 and {len(kata_main)}.")
+            continue
+        elif num_ques <= len(kata_main):
+            break
+    wrong = 0 # nb wrong answer
+    right = 0 # nb right answer
+    count = 0 # current amount of questions asked 
+    selected = random.sample(list(kata_main.items()), num_ques)
+    for index, (jp, en) in enumerate(selected, start=1):
+        while True:                                            # loop till right answer
+            answer = input(f"{index}. {jp}: ").strip().lower() #removes whitespaces and puts in lowercase
+            if answer == en:
+                print("Correct")
+                right += 1             # to later implement rating 
+                break
+            elif answer == "skip":
+                print("Skipping")        # later add score penalty will be applied to message
+                wrong += 1
+                break
+            elif answer == "quit":
+                exit()
+            else:
+                print("Try again")
+                wrong += 1
 def katakana_dakuten():
     pass
 def katakana_combi():
@@ -309,7 +335,6 @@ question_choice = {
 } 
 
 # ---------- Amount Question ---------- #
-#implement limit & all system
 def num_questions():
     while True:
         num_question = input("Enter amount of questions u want to be asked: ")
@@ -342,7 +367,7 @@ def ask_menu(question_choice):
             print("Invalid choice, try again.")
             continue
 
-        if "options" in selected:
+        if "options" in selected:       # if option exist, dig deeper in nested dict and ask 
             ask_menu(selected["options"])
             continue
 
