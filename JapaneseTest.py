@@ -248,7 +248,33 @@ def katakana_gojūon():
                 print("Try again")
                 wrong += 1
 def katakana_dakuten():
-    pass
+    while True:
+        num_ques = num_questions()
+        if num_ques > len(kata_dakuten):
+            print(f"Number is bigger than question pool, enter a number between 1 and {len(kata_dakuten)}.")
+            continue
+        elif num_ques <= len(kata_dakuten):
+            break
+    wrong = 0 # nb wrong answer
+    right = 0 # nb right answer
+    count = 0 # current amount of questions asked 
+    selected = random.sample(list(kata_dakuten.items()), num_ques)
+    for index, (jp, en) in enumerate(selected, start=1):
+        while True:                                            # loop till right answer
+            answer = input(f"{index}. {jp}: ").strip().lower() #removes whitespaces and puts in lowercase
+            if answer == en:
+                print("Correct")
+                right += 1             # to later implement rating 
+                break
+            elif answer == "skip":
+                print("Skipping")        # later add score penalty will be applied to message
+                wrong += 1
+                break
+            elif answer == "quit":
+                exit()
+            else:
+                print("Try again")
+                wrong += 1
 def katakana_combi():
     pass
 def katakana_both():
