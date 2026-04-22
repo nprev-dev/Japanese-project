@@ -7,6 +7,8 @@ import random
 # - Add grammar rules (small tsu, long vowels, combination explication etc, maybe later add tips on how to learn)
 # - Grammar to add: small tsu, long vowels, combi rules, particles
 
+history = []
+
 # ---------- Dicts ---------- #
 hira_main = {
     "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",        # Vowels
@@ -484,7 +486,13 @@ def num_questions():
         return num_question
 
 # ---------- Check History ---------- #
+def check_hist():
+    if not history:
+        print("No available history.")
+        return
 
+    #for i, h in enumerate(history, 1):
+        #print(f"{i}) {h['operation']} | {h['inputs']} -> {h['result']}")
 
 # ---------- Menu loop ---------- #  
 def ask_menu(question_choice):
