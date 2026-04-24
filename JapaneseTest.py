@@ -26,7 +26,7 @@ hira_main = {
 hira_dakuten = {
     "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go", # G row (K -> G)
     "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo", # Z row (S -> Z)
-    "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do", # D row (T -> D)
+    "だ": "da", "ぢ": "ji", "づ": "du", "で": "de", "ど": "do", # D row (T -> D)
     "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo", # B row (H -> B)
     "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po"  # P row (H -> P) Handakuten
 }
@@ -59,7 +59,7 @@ kata_main = {
 kata_dakuten = {
     "ガ": "ga", "ゲ": "ge", "ギ": "gi", "ゴ": "go", "グ": "gu", # G row (K -> G)
     "ザ": "za", "ゼ": "ze", "ジ": "ji", "ゾ": "zo", "ズ": "zu", # Z row (S -> Z)
-    "ダ": "da", "デ": "de", "ヂ": "ji", "ド": "do", "ヅ": "zu", # D row (T -> D)
+    "ダ": "da", "デ": "de", "ヂ": "ji", "ド": "do", "ヅ": "du", # D row (T -> D)
     "バ": "ba", "ベ": "be", "ビ": "bi", "ボ": "bo", "ブ": "bu", # B row (H -> B)
     "パ": "pa", "ペ": "pe", "ピ": "pi", "ポ": "po", "プ": "pu"  # P row (H -> P) Handakuten
 }
@@ -410,9 +410,10 @@ def check_hist():
         print("No available history.")
         return
     # tmr make it print quiz name with a number
-    #for i, h in enumerate(history, 1):
-        #print(f"{i}) {h['operation']} | {h['inputs']} -> {h['result']}")
-    print(history)
+    print("\n--- History ---")
+    for i, h in enumerate(history, 1):
+        print(f"{i}) Right: {h['right']} | Wrong: {h['wrong']} | Accuracy: {h['accuracy']:.2f}%")
+    
 def stop_prog():
     print("Stopping program!")
     exit()
