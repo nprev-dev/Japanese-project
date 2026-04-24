@@ -6,6 +6,7 @@ import random
 # - chose how many questions u want (with an all option)
 # - Add grammar rules (small tsu, long vowels, combination explication etc, maybe later add tips on how to learn)
 # - Grammar to add: small tsu, long vowels, combi rules, particles
+# - add many small learning chunks. Like verbs 1, 2, 3 etc, places 1, 2, 3 and more for objects topics and more
 
 history = []
 
@@ -495,15 +496,29 @@ def num_questions():
             continue
         
         return num_question
+
+# ---------- Add history ---------- #
+def add_history(result):
+    history.append(result)
+    
 # ---------- Check Grade ---------- #
 def show_results(right, wrong):
     total_answers = right + wrong
     accuracy = (right / total_answers) * 100 if total_answers > 0 else 0
 
+    result = {
+        "right": right,
+        "wrong": wrong,
+        "accuracy": accuracy
+    }
+
     print("\n--- Results ---")
     print(f"Right: {right}")
     print(f"Wrong: {wrong}")
     print(f"Accuracy: {accuracy:.2f}%")
+
+    add_history(result)
+    return result
 
 # ---------- Check History ---------- #
 def check_hist():
