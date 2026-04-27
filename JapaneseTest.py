@@ -405,7 +405,8 @@ def hira_and_kata():
                 wrong += 1
     show_results("All Hiragana & Katakana", right, wrong)
 def curr_smalltsu():
-    pass
+    input("Small tsu, the small tsu is a character in japanese writing that indicates a pause which doubles the consonant that follows it.\nPress enter to continue..")
+    input("Small tsu is written (つ -> っ) in Hiragana and (ツ -> ッ) in Katakana. As you can see a small tsu is visibly smaller than a normal tsu making it easier to spot in phrases.\nPress enter to continue..")
 def stop_prog():
     print("Stopping program!")
     exit()
