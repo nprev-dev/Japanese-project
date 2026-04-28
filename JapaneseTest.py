@@ -515,10 +515,16 @@ question_choice = {
         }
     },
     "5": {
+        "name": "Curriculum questionaire",
+        "options": {
+
+        }
+    },
+    "6": {
         "name": "Check history",
         "worker": check_hist
     },
-    "6": {
+    "7": {
         "name": "Quit",
         "worker": stop_prog
     }
