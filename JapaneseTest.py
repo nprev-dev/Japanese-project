@@ -7,6 +7,7 @@ import random
 # - Add grammar rules (small tsu, long vowels, combination explication etc, maybe later add tips on how to learn)
 # - Grammar to add: , combi rules,
 # - add many small learning chunks. Like verbs 1, 2, 3 etc, places 1, 2, 3 and more for objects topics and more
+# - add learning guides and info for JLPT 5, 4, 3, 2, 1 etc
 
 history = []
 
@@ -76,6 +77,9 @@ kata_combi = {
     "ピャ": "pya", "ピョ": "pyo", "ピュ": "pyu", # P row
     "ミャ": "mya", "ミョ": "myo", "ミュ": "myu", # M row
     "リャ": "rya", "リョ": "ryo", "リュ": "ryu"  # R row
+}
+stsu_ques = {
+
 }
 
 # ---------- Workers ---------- #
@@ -420,7 +424,18 @@ def curr_smalltsu():
             continue
 
 def smalltsu_question():
-    pass
+    input("In this questionnaire, you will translate word containing small tsu from japanese to its romaji.\nPress enter to continue..")
+    while True:
+        num_ques = num_questions()
+        if num_ques > len(stsu_ques): 
+            print(f"Number is bigger than question pool, enter a number between 1 and {len(stsu_ques)}.") 
+            continue
+        elif num_ques <= len(stsu_ques): 
+            break
+    wrong = 0 # nb wrong answer
+    right = 0 # nb right answer
+    selected = random.sample(list(stsu_ques.items()), num_ques) 
+    
 def stop_prog():
     print("Stopping program!")
     exit()
