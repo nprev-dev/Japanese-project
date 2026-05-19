@@ -94,7 +94,16 @@ long_vowel_ques = {
     "コンピューター": "konpyuutaa", "スキー": "sukii", "コピー": "kopii",    # (computer), (skiing), (copy)
     "パーティー": "paatii", "ミュージック": "myuujikku", "トレーナー": "torenaa" # (party), (music), (trainer)
 }
-
+particles_ques = {
+    "ha (は)": "topic",
+    "wo (を)": "direct object",
+    "ni (に)": "destination / specific time / indirect object",
+    "de (で)": "location of action / means",
+    "mo (も)": "also / too",
+    "to (と)": "and / with",
+    "kara (から)": "from / because",
+    "no (の)": "possession / of"
+}
 # ---------- Workers ---------- #
 
 def hiragana_gojūon():
