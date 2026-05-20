@@ -520,6 +520,7 @@ def longvowel_question():
 def curr_particles():
     input("Particles, particles are small words in Japanese that show the role of a word in a sentence.\nPress enter to continue..")
     input("For example, は marks the topic, を marks the object, and で marks where an action happens.\nPress enter to continue..")
+    input(f"For example these are the most common particles:\n{particles_ques}")
     input("For example, わたしはパンをたべる(watashi wa pan o taberu), means I eat bread. は shows the topic and を shows what is being eaten.\nPress enter to continue..")
     while True:
         currparticl_ques = input("Do you wanna take a small quiz to test your knowledge? (Yes/no): ")
